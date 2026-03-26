@@ -39,8 +39,8 @@ body {
 
 h1 {
   color: var(--tekst-mocny);
-  font-weight: 600;
-  font-size: 170;
+  font-weight: 600px;
+  font-size: 170px;
   letter-spacing: -1.68px;
   margin: 0px 0;
 }
