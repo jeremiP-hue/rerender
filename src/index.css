@@ -47,7 +47,7 @@ h1 {
 .sekcja-powitalna {
   min-height: calc(100svh - 120px);
   display: grid;
-  background-color: rgba(0, 255, 247, 0.308);
+  background-color: rgba(10, 29, 37, 0.18);
   position: initial;
   place-items: center start;
   isolation: isolate;
@@ -64,7 +64,7 @@ h1 {
 }
 .powitanie22{
   height: 500px;
-  background-color: rgba(127, 246, 255, 0.9);
+  background-color: #1d4351;
   align-items: center;
   display: flex;
   justify-content: center
@@ -76,7 +76,7 @@ h1 {
   align-items: center;
   height: 250px;
   width: 250px;
-  background-color: aquamarine;
+  background-color: #153f1b;
   top:-170px;
   left: 19%;
 }
