@@ -1,0 +1,78 @@
+.pasek-nawigacji {
+  background-color: rgb(85, 163, 163);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;;
+}
+
+.linki-nawigacji {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.link-nawigacji {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--tekst-mocny);
+  background: var(--tlo-linku);
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.link-nawigacji:hover {
+  cursor: pointer;
+  transform: translateY(-1px);
+  box-shadow: var(--cien);
+}
+
+.logo-nawigacji {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  height: 48px;
+  padding: 8px 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: var(--tlo-linku);
+}
+
+.logo-nawigacji img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+}
+
+@media (max-width: 720px) {
+  .pasek-nawigacji {
+    padding: 16px 20px;
+  }
+
+  .logo-nawigacji {
+    min-width: 82px;
+    height: 42px;
+    padding: 6px 12px;
+  }
+
+  .logo-nawigacji img {
+    width: 122px;
+    height: 122px;
+  }
+}

@@ -1,0 +1,164 @@
+:root {
+  --tekst: #9ca3af;
+  --tekst-mocny: #f3f4f6;
+  --bg: #16171d;
+  --tlo-bokow: #050816;
+  --obramowanie: #2e303a;
+  --tlo-linku: rgba(47, 48, 58, 0.5);
+  --cien:
+    rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--tlo-bokow);
+  background-image:
+    radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 22%),
+    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.18), transparent 26%),
+    url("./assets/tlo-kod.svg");
+  background-position: left top, right bottom, center center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: auto, auto, cover;
+  background-attachment: fixed, fixed, fixed;
+  overflow: scroll;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--obramowanie);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: var(--bg);
+
+}
+
+h1 {
+  color: var(--tekst-mocny);
+  font-weight: 600;
+  font-size: 170;
+  letter-spacing: -1.68px;
+  margin: 0px 0;
+}
+
+.sekcja-powitalna {
+  min-height: calc(100svh - 120px);
+  display: grid;
+  background-color: rgba(0, 255, 247, 0.308);
+  position: initial;
+  place-items: center start;
+  isolation: isolate;
+  padding: 0 35px;
+  box-sizing: border-box;
+}
+
+.wiersz-powitalny {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+}
+.powitanie22{
+  height: 500px;
+  background-color: rgba(127, 246, 255, 0.9);
+  align-items: center;
+  display: flex;
+  justify-content: center
+}
+.powitanie22-22{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  background-color: aquamarine;
+  top:-170px;
+  left: 19%;
+}
+.logo-glowne {
+  display: block;
+  width: min(100%, 830px);
+  height: auto;
+  margin-left: auto;
+}
+.napis-re-render {
+  display: block;
+  width: 1415px;
+  height: 90px;
+  max-width: 200%;
+  object-fit: contain;
+  object-position: left center;
+  align-self: flex-start;
+}
+
+.opis-strony {
+  margin: 0;
+}
+.sekcja-powitalna::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./assets/kodbgbg.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.38;
+  z-index: -1;
+}
+
+.sekcja-powitalna > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+p {
+  margin: 0;
+}
+
+.zawartosc-strony {
+  flex: 1;
+  padding: auto;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin: 0px 0;
+  }
+
+  .zawartosc-strony {
+    padding: 24px 20px;
+  }
+
+  .wiersz-powitalny {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .logo-glowne {
+    width: min(100%, 420px);
+  }
+}
+.tresc-powitalna {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  padding: 8px;
+  text-align: left;
+}
+
+.tresc-powitalna > * {
+  margin-left: 0;
+}
