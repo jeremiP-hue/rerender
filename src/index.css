@@ -126,6 +126,66 @@ p {
   padding: auto;
 }
 
+.sekcja-projekty {
+  padding: 48px 32px 64px;
+}
+
+.lista-projektow {
+  list-style: none;
+  display: grid;
+  gap: 24px;
+  padding: 0;
+  margin: 32px 0 0;
+}
+
+.karta-projektu {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  border: 1px solid var(--obramowanie);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(14, 23, 37, 0.96), rgba(10, 15, 28, 0.92));
+  box-shadow: var(--cien);
+  text-align: left;
+}
+
+.tytul-projektu {
+  margin: 0;
+  color: var(--tekst-mocny);
+  font-size: 1.5rem;
+}
+
+.opis-projektu {
+  margin: 0;
+  color: var(--tekst);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.link-projektu {
+  color: #67e8f9;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-projektu:hover {
+  color: #a5f3fc;
+  text-decoration: underline;
+}
+
+.obraz-projektu {
+  width: min(100%, 720px);
+  border-radius: 18px;
+  border: 1px solid rgba(103, 232, 249, 0.18);
+}
+
+.meta-projektu {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 @media (max-width: 1024px) {
   :root {
     font-size: 16px;
@@ -138,6 +198,10 @@ p {
 
   .zawartosc-strony {
     padding: 24px 20px;
+  }
+
+  .sekcja-projekty {
+    padding: 32px 16px 48px;
   }
 
   .wiersz-powitalny {
