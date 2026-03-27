@@ -1,25 +1,43 @@
 
 import { useEffect, useState } from "react";
 
+const apiBaseUrl = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "http://localhost:3000" : "");
+
 const Projekty = () => {
-    const [projekty, setProjekty] = useState([])
+  const [projekty, setProjekty] = useState([]);
+  const [bladLadowania, setBladLadowania] = useState("");
 
-
-    useEffect(() => {
-        const pobierz = async () => {
-            const projektyUrl = "http://localhost:3000/projects"
-            const res = await fetch(projektyUrl)
-            const projektys = await res.json()
-            setProjekty(p => projektys)
+  useEffect(() => {
+    const pobierz = async () => {
+      try {
+        if (!apiBaseUrl) {
+          throw new Error("Brak konfiguracji VITE_API_URL.");
         }
-        console.log('test')
-        pobierz()
-    }, [])
 
+        const projektyUrl = `${apiBaseUrl}/projects`;
+        const res = await fetch(projektyUrl);
+
+        if (!res.ok) {
+          throw new Error("Nie udalo sie pobrac projektow.");
+        }
+
+        const projektys = await res.json();
+        setProjekty(projektys);
+      } catch (error) {
+        console.error(error);
+        setBladLadowania(
+          error instanceof Error ? error.message : "Nie udalo sie pobrac projektow.",
+        );
+      }
+    };
+
+    pobierz();
+  }, []);
 
   return (
     <section className="sekcja-projekty">
       <h1>Oto moje Projekty</h1>
+      {bladLadowania ? <p className="meta-projektu">{bladLadowania}</p> : null}
       <ul className="lista-projektow">
         {projekty.map((e) => (
           <li key={`${e.name}-${e.date}`} className="karta-projektu">
