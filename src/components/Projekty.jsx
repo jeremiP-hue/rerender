@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 
-const apiBaseUrl = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "http://localhost:3000" : "");
+const apiBaseUrl = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "https://backrerender.vercel.app" : "");
 
 const Projekty = () => {
   const [projekty, setProjekty] = useState([]);
