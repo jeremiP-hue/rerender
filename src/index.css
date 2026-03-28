@@ -62,14 +62,17 @@ h1 {
   width: 100%;
   max-width: 100%;
 }
-.powitanie22{
+
+.powitanie22 {
   height: 500px;
   background-color: #1d4351;
   align-items: center;
   display: flex;
-  justify-content: center
+  justify-content: center;
+  text-align: left;
 }
-.powitanie22-22{
+
+.powitanie22-22 {
   display: flex;
   position: relative;
   justify-content: center;
@@ -77,15 +80,18 @@ h1 {
   height: 250px;
   width: 250px;
   background-color: #153f1b;
-  top:-170px;
-  left: 19%;
+  top: -170px;
+  left: 0%;;
+  text-align: center;
 }
+
 .logo-glowne {
   display: block;
   width: min(100%, 830px);
   height: auto;
   margin-left: auto;
 }
+
 .napis-re-render {
   display: block;
   width: 1415px;
@@ -99,6 +105,7 @@ h1 {
 .opis-strony {
   margin: 0;
 }
+
 .sekcja-powitalna::before {
   content: "";
   position: absolute;
@@ -106,19 +113,20 @@ h1 {
   background-image: url("./assets/kodbgbg.png");
   background-size: cover;
   background-position: center;
-  background-size:100% ;
+  background-size: 100%;
   opacity: 0.38;
   z-index: -1;
 }
 
-.sekcja-powitalna > * {
+.sekcja-powitalna>* {
   position: relative;
   z-index: 1;
 }
 
 
 p {
-  margin: 0;
+  margin:  0 16 0 0 ;
+  align-self: left;
 }
 
 .zawartosc-strony {
@@ -213,6 +221,7 @@ p {
     width: min(100%, 420px);
   }
 }
+
 .tresc-powitalna {
   display: flex;
   flex-direction: column;
@@ -223,6 +232,6 @@ p {
   text-align: left;
 }
 
-.tresc-powitalna > * {
+.tresc-powitalna>* {
   margin-left: 0;
 }

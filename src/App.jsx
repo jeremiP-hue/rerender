@@ -19,7 +19,8 @@ const StronaGlowna = () => {
 
       </div>
       <div className="powitanie22">
-        <p>W re-render zajmujemy się </p>
+        <p>W re-render zajmujemy się<br /> robieniem strom internetowych
+        </p>
         <div className="powitanie22-22">
                   <p>re-render to jedno-osobowa firma zajmująca się robieniem stron internetowych</p>
         </div>
