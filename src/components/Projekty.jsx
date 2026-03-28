@@ -1,7 +1,6 @@
-
 import { useEffect, useState } from "react";
 
-const apiBaseUrl = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "https://backrerender.vercel.app" : "");
+const apiBaseUrl = import.meta.env.VITE_API_URL || "https://backrerender.vercel.app";
 
 const Projekty = () => {
   const [projekty, setProjekty] = useState([]);
@@ -10,10 +9,6 @@ const Projekty = () => {
   useEffect(() => {
     const pobierz = async () => {
       try {
-        if (!apiBaseUrl) {
-          throw new Error("Brak konfiguracji VITE_API_URL.");
-        }
-
         const projektyUrl = `${apiBaseUrl}/projects`;
         const res = await fetch(projektyUrl);
 
@@ -46,7 +41,7 @@ const Projekty = () => {
             <a className="link-projektu" href={e.url} target="_blank" rel="noreferrer">
               to jest link albo nie bo nie wszystkie dzialaja
             </a>
-            <img 
+            <img
               className="obraz-projektu"
               src={e.img}
               alt={`Podglad projektu ${e.name}`}
