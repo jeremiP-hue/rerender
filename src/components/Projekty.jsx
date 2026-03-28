@@ -2,6 +2,18 @@ import { useEffect, useState } from "react";
 
 const apiBaseUrl = import.meta.env.VITE_API_URL || "https://backrerender.vercel.app";
 
+const normalizujUrlProjektu = (url) => {
+  if (!url) {
+    return "";
+  }
+
+  if (/^https?:\/\//i.test(url)) {
+    return url;
+  }
+
+  return `https://${url}`;
+};
+
 const Projekty = () => {
   const [projekty, setProjekty] = useState([]);
   const [bladLadowania, setBladLadowania] = useState("");
@@ -34,23 +46,27 @@ const Projekty = () => {
       <h1>Oto moje Projekty</h1>
       {bladLadowania ? <p className="meta-projektu">{bladLadowania}</p> : null}
       <ul className="lista-projektow">
-        {projekty.map((e) => (
-          <li key={`${e.name}-${e.date}`} className="karta-projektu">
-            <h4 className="tytul-projektu">{e.name}</h4>
-            <p className="opis-projektu">{e.description}</p>
-            <a className="link-projektu" href={e.url} target="_blank" rel="noreferrer">
-              to jest link albo nie bo nie wszystkie dzialaja
-            </a>
-            <img
-              className="obraz-projektu"
-              src={e.img}
-              alt={`Podglad projektu ${e.name}`}
-            />
-            <p className="meta-projektu">
-              ten projekt zostal zrobiony w {e.date} i jest w statusie {e.state}
-            </p>
-          </li>
-        ))}
+        {projekty.map((e) => {
+          const urlProjektu = normalizujUrlProjektu(e.url);
+
+          return (
+            <li key={`${e.name}-${e.date}`} className="karta-projektu">
+              <h4 className="tytul-projektu">{e.name}</h4>
+              <p className="opis-projektu">{e.description}</p>
+              <a className="link-projektu" href={urlProjektu} target="_blank" rel="noreferrer">
+                to jest link albo nie bo nie wszystkie dzialaja
+              </a>
+              <img
+                className="obraz-projektu"
+                src={e.img}
+                alt={`Podglad projektu ${e.name}`}
+              />
+              <p className="meta-projektu">
+                ten projekt zostal zrobiony w {e.date} i jest w statusie {e.state}
+              </p>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
