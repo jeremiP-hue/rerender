@@ -15,6 +15,7 @@ const Nawigacja = () => {
         <Link to="/projekty" className="link-nawigacji">
         Projekty
         </Link>
+        <Link to="/cennik" className="link-nawigacji">Cennik</Link>
       </nav>
       <div className="logo-nawigacji">
         <img src={logo} alt="Logo strony" />

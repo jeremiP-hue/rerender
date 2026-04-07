@@ -6,6 +6,7 @@ import StronaGlowna from "./App";
 import Kontakt from "./components/Kontakt";
 import Projekty from "./components/Projekty";
 import UkladStrony from "./components/UkladStrony";
+import Cennik from "./components/Cennik";
 
 
 const routerAplikacji = createBrowserRouter([
@@ -24,6 +25,10 @@ const routerAplikacji = createBrowserRouter([
       {
         path: "projekty",
         element: <Projekty />
+      },
+      {
+        path: "cennik",
+        element: < Cennik/>
       }
     ],
   },

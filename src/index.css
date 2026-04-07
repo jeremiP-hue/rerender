@@ -22,7 +22,42 @@ body {
   background-attachment: fixed, fixed, fixed;
   overflow: scroll;
 }
+.h33{
+  position: relative;
+  top: -10vw;
+  letter-spacing: 0;
+  align-self: center;
 
+
+}
+.gam33 {
+  height: 250px;
+  display: block;
+  top: 20vw;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.komputer33 {
+  left: 0vw;
+}
+
+.konsola33 {
+  right: 0vw;
+}
+
+.p33{
+  display: inline;
+  position: absolute;
+  margin: 0;
+  top: 10vw;
+  align-self: center;
+  text-align: center;
+  z-index: 2137;
+}
 #root {
   width: 80vw;
   max-width: 100%;
@@ -64,27 +99,67 @@ h1 {
 }
 
 .powitanie22 {
-  height: 500px;
+  height: 50vh;
   background-color: #1d4351;
   align-items: center;
   display: flex;
   justify-content: center;
-  text-align: left;
+  position: relative;
 }
 
 .powitanie22-22 {
-  display: flex;
   position: relative;
+  top:-5.5vh;
+  left: 11.7vw;
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 250px;
-  width: 250px;
+  align-self: flex-start;
+  height: 27.8vh;
+  width: 27.8vh;
   background-color: #153f1b;
-  top: -170px;
-  left: 0%;;
   text-align: center;
 }
+.js-logo-blue{
+  border-radius: 100%;
+  height: 16.7vh;
+  position: absolute;
+  right: 50vw;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.react-logo-blue{
+  border-radius: 100%;
+  height: 16.7vh;
+  position: absolute;
+  right: 8.3vw;
+  bottom: 27.8vh;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.kręcenie{
+  cursor: wait;
+  animation: krecenie 1s linear 2;
+  box-shadow: 0 0 32px rgba(56, 189, 248, 0.75);
+}
+@keyframes krecenie {
+  from {
+    transform: rotate(0deg) scale(1.12);
+  }
 
+  to {
+    transform: rotate(360deg) scale(1.12);
+  }
+}
+.marzenia{
+  height: 55.5vh;
+  background-color: #1d7ec4a8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 .logo-glowne {
   display: block;
   width: min(100%, 830px);
@@ -124,9 +199,11 @@ h1 {
 }
 
 
-p {
-  margin:  0 16 0 0 ;
-  align-self: left;
+.p22 {
+  position: absolute;
+  left: 5vw;
+  bottom: 17.8vh;
+  text-align: left;
 }
 
 .zawartosc-strony {

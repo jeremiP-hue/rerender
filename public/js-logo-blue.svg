@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Blue JavaScript logo</title>
+  <desc id="desc">A circular blue JavaScript-inspired logo with centered JS letters.</desc>
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="24%" r="78%">
+      <stop offset="0" stop-color="#7dd3fc" />
+      <stop offset="0.38" stop-color="#0ea5e9" />
+      <stop offset="0.72" stop-color="#1d4ed8" />
+      <stop offset="1" stop-color="#0f172a" />
+    </radialGradient>
+    <linearGradient id="ring" x1="96" y1="82" x2="416" y2="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e0f2fe" stop-opacity="0.9" />
+      <stop offset="0.42" stop-color="#38bdf8" stop-opacity="0.45" />
+      <stop offset="1" stop-color="#020617" stop-opacity="0.35" />
+    </linearGradient>
+    <linearGradient id="shine" x1="126" y1="94" x2="332" y2="318" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.58" />
+      <stop offset="0.75" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#020617" flood-opacity="0.42" />
+    </filter>
+    <clipPath id="badge">
+      <circle cx="256" cy="256" r="226" />
+    </clipPath>
+  </defs>
+
+  <circle cx="256" cy="256" r="226" fill="url(#bg)" filter="url(#shadow)" />
+  <g clip-path="url(#badge)">
+    <path d="M92 122C160 73 268 56 376 91C280 112 193 158 120 229C99 190 89 154 92 122Z" fill="url(#shine)" />
+    <path d="M72 356C174 406 296 412 440 342V452C315 523 174 519 72 455Z" fill="#020617" opacity="0.2" />
+    <g fill="none" stroke="#bfdbfe" stroke-linecap="round" stroke-width="8" opacity="0.22">
+      <path d="M122 152H230" />
+      <path d="M112 196H278" />
+      <path d="M128 240H216" />
+    </g>
+  </g>
+
+  <circle cx="256" cy="256" r="226" fill="none" stroke="url(#ring)" stroke-width="18" />
+  <circle cx="256" cy="256" r="188" fill="none" stroke="#bae6fd" stroke-width="2" opacity="0.22" />
+
+  <text
+    x="256"
+    y="315"
+    fill="#e0f2fe"
+    font-family="Inter, Arial, sans-serif"
+    font-size="182"
+    font-weight="900"
+    letter-spacing="-14"
+    text-anchor="middle">JS</text>
+  <text
+    x="256"
+    y="315"
+    fill="none"
+    stroke="#075985"
+    stroke-width="5"
+    font-family="Inter, Arial, sans-serif"
+    font-size="182"
+    font-weight="900"
+    letter-spacing="-14"
+    text-anchor="middle"
+    opacity="0.9">JS</text>
+</svg>
