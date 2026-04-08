@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "./index.css";
+import "./app.css";
 import reRender from "./assets/re-render.svg";
 import logo2137 from "./assets/logo2137.png";
-
+import rece from "./assets/ręce..jpeg";
 
 const StronaGlowna = () => {
   const [krecaceSieLoga, setKrecaceSieLoga] = useState({
@@ -14,14 +15,13 @@ const StronaGlowna = () => {
     setKrecaceSieLoga((poprzednieLoga) => ({
       ...poprzednieLoga,
       [nazwaLogo]: true,
+    }));
 
-    }
-    ));
     setTimeout(() => {
       setKrecaceSieLoga((poprzednieLoga) => ({
         ...poprzednieLoga,
         [nazwaLogo]: false,
-      }))
+      }));
     }, 2000);
   };
 
@@ -37,12 +37,16 @@ const StronaGlowna = () => {
 
           <img src={logo2137} className="logo-glowne" alt="Logo 2137" />
         </div>
-
       </div>
-      <div className="powitanie22">
-        <p className="p22">W re-render zajmujemy się<br /> robieniem stron internetowych <br />
 
+      <div className="powitanie22">
+        <p className="p22">
+          W re-render zajmujemy się
+          <br />
+          robieniem stron internetowych
+          <br />
         </p>
+
         <img
           className={`react-logo-blue ${krecaceSieLoga.react ? "kręcenie" : ""}`}
           src="/react-logo-blue.svg"
@@ -58,23 +62,58 @@ const StronaGlowna = () => {
         />
 
         <div className="powitanie22-22">
-          <p>re-render to jednoosobowa firma zajmująsca się robieniem stron internetowych</p>
+          <p>re-render to jednoosobowa firma zajmująca się robieniem stron internetowych</p>
         </div>
       </div>
+
       <div className="marzenia">
         <h1 className="h33">Poprzez swoje strony internetowe staram się spełniać swoje marzenia</h1>
-        <img className="gam33 komputer33" src="/gaming-computer-transparent.svg" alt="Komputer gamingowy" />
-        <p className="p33">Od zawsze moim marzeniem było robić gry.<br />
-          Kiedy zacząłem uczyć się programowania
-          zacząłem robić gry w Pythonie,<br /> a potem nauczyłem się robić strony internetowe.
-          <br />Dzięki pieniądzą ze stron zbiram na kopputer i kursy robienia gier</p>
+        <img
+          className="gam33 komputer33"
+          src="/gaming-computer-transparent.svg"
+          alt="Komputer gamingowy"
+        />
+        <p className="p33">
+          Od zawsze moim marzeniem było robić gry.
+          <br />
+          Kiedy zacząłem uczyć się programowania, zacząłem robić gry w Pythonie,
+          <br />
+          a potem nauczyłem się robić strony internetowe.
+          <br />
+          Dzięki pieniądzom ze stron zbieram na komputer i kursy robienia gier.
+        </p>
         <img className="gam33 konsola33" src="/console-transparent.svg" alt="Konsola do gier" />
+      </div>
 
+      <div className="ja">
+        <h1 className="czesc">Cześć, tu Jeremi</h1>
+        <h2
+          className="czesc"
+          style={{
+            top: "70px",
+          }}
+        >
+          i mam 12 lat
+        </h2>
 
+        <div className="karta-ja">
+          <img className="rece-zdjecie" src={rece} alt="Ręce" />
+
+          <div className="imie">
+            <h1>Jeremi Pińkowski</h1>
+          </div>
+        </div>
+
+        <p className="opis-ja">
+          Uczę się tworzyć strony internetowe, rozwijam się w programowaniu i z
+          każdym kolejnym projektem zdobywam nowe doświadczenie. Lubię uczyć się
+          nowych rzeczy, testować własne pomysły i krok po kroku stawać się coraz
+          lepszy w tym, co robię. Tworzenie stron daje mi dużo satysfakcji, a
+          jednocześnie pomaga mi zbliżać się do mojego największego celu, czyli
+          robienia własnych gier w przyszłości.
+        </p>
       </div>
     </>
-
-
   );
 };
 

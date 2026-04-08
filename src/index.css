@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@500;700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Orbitron", sans-serif;
+}
+
+body,
+p,
+a,
+button,
+input,
+textarea,
+select {
+  font-family: "Inter", sans-serif;
+}
+
 :root {
   --tekst: #ffffff;
   --tekst-mocny: #ffffff;
@@ -100,7 +121,7 @@ h1 {
 }
 
 .powitanie22 {
-  height: 50vh;
+  height: 70vh;
   background-color: #1d4351;
   align-items: center;
   display: flex;
