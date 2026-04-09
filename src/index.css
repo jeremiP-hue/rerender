@@ -7,7 +7,7 @@ h4,
 h5,
 h6 {
   font-family: "Orbitron", sans-serif;
-}
+}  
 
 body,
 p,
@@ -45,11 +45,8 @@ body {
   overflow: scroll;
 }
 .h33{
-  position: relative;
-  top: -10vw;
-  letter-spacing: 0;
-  align-self: center;
-
+  top:1vh;
+  position:  absolute;
 
 }
 .gam33 {
@@ -72,13 +69,8 @@ body {
 }
 
 .p33{
-  display: inline;
-  position: absolute;
-  margin: 0;
-  top: 10vw;
-  align-self: center;
-  text-align: center;
-  z-index: 2137;
+  margin:  0 240px;
+
 }
 #root {
   width: 80vw;
@@ -174,8 +166,9 @@ h1 {
   }
 }
 .marzenia{
-  height: 55.5vh;
+  height: 80vh;
   background-color: #1d7ec4a8;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
