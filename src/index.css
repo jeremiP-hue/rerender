@@ -7,7 +7,7 @@ h4,
 h5,
 h6 {
   font-family: "Orbitron", sans-serif;
-}  
+}
 
 body,
 p,
@@ -33,49 +33,38 @@ select {
 body {
   margin: 0;
   color: #ffffff;
-  background-color: var(--tlo-bokow);
-  background-image:
-    radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 22%),
-    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.18), transparent 26%),
-    url("./assets/tlo-kod.svg");
-  background-position: left top, right bottom, center center;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: auto, auto, cover;
-  background-attachment: fixed, fixed, fixed;
+
   overflow: scroll;
-}
-.h33{
-  top:1vh;
-  position:  absolute;
+
+  @media screen and (min-width: 768px) {
+    background-color: var(--tlo-bokow);
+    background-image:
+      radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 22%),
+      radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.18), transparent 26%),
+      url("./assets/tlo-kod.svg");
+    background-position: left top, right bottom, center center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: auto, auto, cover;
+    background-attachment: fixed, fixed, fixed;
+
+  }
+
 
 }
-.gam33 {
-  height: 250px;
-  display: block;
-  top: 20vw;
-  margin: 0;
+
+.h33 {
+  top: 1vh;
+
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 0;
-}
-
-.komputer33 {
-  left: 0vw;
-}
-
-.konsola33 {
-  right: 0vw;
-}
-
-.p33{
-  margin:  0 240px;
 
 }
+
+.p33 {
+  margin: 0 240px;
+
+}
+
 #root {
-  width: 80vw;
-  max-width: 100%;
-  margin: 0 auto;
   text-align: center;
   border-inline: 1px solid var(--obramowanie);
   min-height: 100svh;
@@ -83,6 +72,19 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   background: var(--bg);
+
+  @media screen and (min-width: 768px) {
+    width: 80vw;
+    margin: 0 auto;
+
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+
+  }
+
+
 
 }
 
@@ -123,7 +125,7 @@ h1 {
 
 .powitanie22-22 {
   position: relative;
-  top:-5.5vh;
+  top: -5.5vh;
   left: 11.7vw;
   display: flex;
   justify-content: center;
@@ -134,7 +136,8 @@ h1 {
   background-color: #153f1b;
   text-align: center;
 }
-.js-logo-blue{
+
+.js-logo-blue {
   border-radius: 100%;
   height: 16.7vh;
   position: absolute;
@@ -142,7 +145,8 @@ h1 {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.react-logo-blue{
+
+.react-logo-blue {
   border-radius: 100%;
   height: 16.7vh;
   position: absolute;
@@ -151,11 +155,13 @@ h1 {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.kręcenie{
+
+.kręcenie {
   cursor: wait;
   animation: krecenie 1s linear 2;
   box-shadow: 0 0 32px rgba(56, 189, 248, 0.75);
 }
+
 @keyframes krecenie {
   from {
     transform: rotate(0deg) scale(1.12);
@@ -165,7 +171,8 @@ h1 {
     transform: rotate(360deg) scale(1.12);
   }
 }
-.marzenia{
+
+.marzenia {
   height: 80vh;
   background-color: #1d7ec4a8;
   padding: 20px;
@@ -173,157 +180,177 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image:
+    url("/gaming-computer-transparent.svg"),
+    url("/console-transparent.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 1.5vw center, right 1.5vw center;
+  background-size: 22vw auto, 18vw auto;
   position: relative;
 }
-.logo-glowne {
-  display: block;
-  width: min(100%, 830px);
-  height: auto;
-  margin-left: auto;
-}
 
-.napis-re-render {
-  display: block;
-  width: 1415px;
-  height: 90px;
-  max-width: 200%;
-  object-fit: contain;
-  object-position: left center;
-  align-self: flex-start;
-}
-
-.opis-strony {
-  margin: 0;
-}
-
-.sekcja-powitalna::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("./assets/kodbgbg.png");
-  background-size: cover;
-  background-position: center;
-  background-size: 100%;
-  opacity: 0.38;
-  z-index: -1;
-}
-
-.sekcja-powitalna>* {
-  position: relative;
-  z-index: 1;
-}
-
-
-.p22 {
-  position: absolute;
-  left: 5vw;
-  bottom: 17.8vh;
-  text-align: left;
-}
-
-.zawartosc-strony {
-  flex: 1;
-  padding: auto;
-}
-
-.sekcja-projekty {
-  padding: 48px 32px 64px;
-}
-
-.lista-projektow {
-  list-style: none;
-  display: grid;
-  gap: 24px;
-  padding: 0;
-  margin: 32px 0 0;
-}
-
-.karta-projektu {
-  display: grid;
-  gap: 14px;
-  padding: 24px;
-  border: 1px solid var(--obramowanie);
-  border-radius: 24px;
-  background: linear-gradient(180deg, rgba(14, 23, 37, 0.96), rgba(10, 15, 28, 0.92));
-  box-shadow: var(--cien);
-  text-align: left;
-}
-
-.tytul-projektu {
-  margin: 0;
-  color: var(--tekst-mocny);
-  font-size: 1.5rem;
-}
-
-.opis-projektu {
-  margin: 0;
-  color: var(--tekst);
-  font-size: 0.98rem;
-  line-height: 1.6;
-}
-
-.link-projektu {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.link-projektu:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-.obraz-projektu {
-  width: min(100%, 720px);
-  border-radius: 18px;
-  border: 1px solid rgba(103, 232, 249, 0.18);
-}
-
-.meta-projektu {
-  margin: 0;
-  color: #ffffff;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-@media (max-width: 1024px) {
-  :root {
-    font-size: 16px;
+  .logo-glowne {
+    display: block;
+    width: 52vw;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
   }
 
-  h1 {
-    font-size: 36px;
-    margin: 0px 0;
+  .napis-re-render {
+    display: block;
+    width: 88vw;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: left center;
+    align-self: flex-start;
+  }
+
+  .opis-strony {
+    margin: 0;
+  }
+
+  .sekcja-powitalna::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("./assets/kodbgbg.png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size: 100%;
+    opacity: 0.38;
+    z-index: -1;
+  }
+
+  .sekcja-powitalna>* {
+    position: relative;
+    z-index: 1;
+  }
+
+
+  .p22 {
+    position: absolute;
+    left: 5vw;
+    bottom: 17.8vh;
+    text-align: left;
   }
 
   .zawartosc-strony {
-    padding: 24px 20px;
+    flex: 1;
+    padding: auto;
   }
 
   .sekcja-projekty {
-    padding: 32px 16px 48px;
+    padding: 48px 32px 64px;
   }
 
-  .wiersz-powitalny {
-    flex-wrap: wrap;
-    gap: 16px;
+  .lista-projektow {
+    list-style: none;
+    display: grid;
+    gap: 24px;
+    padding: 0;
+    margin: 32px 0 0;
   }
 
-  .logo-glowne {
-    width: min(100%, 420px);
+  .karta-projektu {
+    display: grid;
+    gap: 14px;
+    padding: 24px;
+    border: 1px solid var(--obramowanie);
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(14, 23, 37, 0.96), rgba(10, 15, 28, 0.92));
+    box-shadow: var(--cien);
+    text-align: left;
+  }
+
+  .tytul-projektu {
+    margin: 0;
+    color: var(--tekst-mocny);
+    font-size: 1.5rem;
+  }
+
+  .opis-projektu {
+    margin: 0;
+    color: var(--tekst);
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .link-projektu {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .link-projektu:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  .obraz-projektu {
+    width: 100%;
+    max-width: 72vw;
+    border-radius: 18px;
+    border: 1px solid rgba(103, 232, 249, 0.18);
+  }
+
+  .meta-projektu {
+    margin: 0;
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1024px) {
+    :root {
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 0px 0;
+    }
+
+    .zawartosc-strony {
+      padding: 24px 20px;
+    }
+
+    .sekcja-projekty {
+      padding: 32px 16px 48px;
+    }
+
+    .wiersz-powitalny {
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo-glowne {
+      width: 78vw;
+      max-width: 100%;
+    }
+
+  .obraz-projektu {
+    max-width: 100%;
+  }
+
+  .marzenia {
+    background-position: left 1vw bottom, right 1vw bottom;
+    background-size: 26vw auto, 22vw auto;
   }
 }
 
-.tresc-powitalna {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: fit-content;
-  max-width: 100%;
-  padding: 8px;
-  text-align: left;
-}
+  .tresc-powitalna {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+    max-width: 100%;
+    padding: 8px;
+    text-align: left;
+  }
 
-.tresc-powitalna>* {
-  margin-left: 0;
-}
+  .tresc-powitalna>* {
+    margin-left: 0;
+  }

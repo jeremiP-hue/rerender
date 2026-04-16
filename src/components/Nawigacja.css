@@ -44,7 +44,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 96px;
+  min-width: clamp(5.5rem, 8vw, 7rem);
   height: 48px;
   padding: 8px 14px;
   overflow: hidden;
@@ -55,7 +55,7 @@
 
 .logo-nawigacji img {
   display: block;
-  width: 140px;
+  width: clamp(6.5rem, 11vw, 9rem);
   height: 140px;
   object-fit: cover;
 }
@@ -66,13 +66,13 @@
   }
 
   .logo-nawigacji {
-    min-width: 82px;
+    min-width: clamp(4.75rem, 18vw, 5.5rem);
     height: 42px;
     padding: 6px 12px;
   }
 
   .logo-nawigacji img {
-    width: 122px;
+    width: clamp(5.75rem, 24vw, 7rem);
     height: 122px;
   }
 }

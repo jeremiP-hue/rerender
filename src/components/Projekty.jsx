@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const apiBaseUrl = import.meta.env.VITE_API_URL || "https://backrerender.vercel.app";
+const apiBaseUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 const normalizujUrlProjektu = (url) => {
   if (!url) {

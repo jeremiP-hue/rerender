@@ -68,11 +68,6 @@ const StronaGlowna = () => {
 
       <div className="marzenia">
         <h1 className="h33">Poprzez swoje strony internetowe staram się spełniać swoje marzenia</h1>
-        <img
-          className="gam33 komputer33"
-          src="/gaming-computer-transparent.svg"
-          alt="Komputer gamingowy"
-        />
         <p className="p33">
           Od zawsze moim marzeniem było robić gry.
           <br />
@@ -81,9 +76,7 @@ const StronaGlowna = () => {
           a potem nauczyłem się robić strony internetowe.
           <br />
           Dzięki pieniądzom ze stron zbieram na komputer i kursy robienia gier.
-        </p>
-        <img className="gam33 konsola33" src="/console-transparent.svg" alt="Konsola do gier" />
-      </div>
+        </p>      </div>
 
       <div className="ja">
         <h1 className="czesc">Cześć, tu Jeremi</h1>
