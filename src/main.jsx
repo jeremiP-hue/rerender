@@ -29,6 +29,9 @@ const routerAplikacji = createBrowserRouter([
       {
         path: "cennik",
         element: < Cennik/>
+      },
+      {
+        path: ""
       }
     ],
   },
