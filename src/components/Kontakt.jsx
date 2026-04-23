@@ -1,6 +1,6 @@
 const Kontakt = () => {
     return(
-        <h1>Kontakt</h1>
+        <h1>Witaj jeżeli jesteś zainteresowany moimi usługami </h1>
     )
 }
 export default Kontakt

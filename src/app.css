@@ -1,57 +1,79 @@
+.ja-zawartosc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
 .karta-ja {
     position: relative;
-    display: inline-block;
+    flex-shrink: 0;
 }
 
 .czesc {
     color: rgb(202, 255, 255);
-    position: absolute;
-    top: 24px;
-    left: 50%;
-    transform: translateX(-50%);
     margin: 0;
+    justify-self: stretch;
+    text-align: center;
+    width: 100%;
     letter-spacing: 0;
     z-index: 3;
+    position: relative;
+
 }
 
 .opis-ja {
-    position: absolute;
-    top: 120px;
-    left: 35%;
-    transform: translateX(-50%);
-    width: max(40%);
+    margin: 0;
+    max-width: 38vw;
     line-height: 1.6;
     color: rgb(202, 255, 255);
     z-index: 3;
+    text-align: left;
 }
 
 .ja {
-    height: 80vh;
+
+    min-height: 80vh;
     background-color: rgba(200, 200, 200, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    overflow: hidden;
-    padding-right: 9vh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    justify-content: stretch;
+    gap: 2vh;
+    padding: 4vh 9vh;
     position: relative;
+
 }
 
 .rece-zdjecie {
     width: auto;
+    
     height: 50vh;
     opacity: 0.8;
-    border-radius: 10px;
-    display: block;
+    border-radius: 1vw;
     transform: rotate(-90deg);
 }
 
-.imie {
+.imie{
     position: absolute;
     top: 15%;
     left: 20%;
     transform: translate(-50%, -50%);
-    padding: 16px 24px;
+    padding: 1.2vw 1.8vw;
     background-color: rgba(10, 39, 37, 0.88);
-    border-radius: 12px;
+    border-radius: 1vw;
     z-index: 2;
+}
+
+@media (max-width: 900px) {
+    .ja-zawartosc {
+        gap: 6vw;
+    }
+
+    .opis-ja {
+        max-width: 100%;
+        text-align: center;
+    }
 }

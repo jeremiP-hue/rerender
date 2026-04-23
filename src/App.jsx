@@ -82,29 +82,28 @@ const StronaGlowna = () => {
         <h1 className="czesc">Cześć, tu Jeremi</h1>
         <h2
           className="czesc"
-          style={{
-            top: "70px",
-          }}
         >
           i mam 12 lat
         </h2>
 
-        <div className="karta-ja">
+        <div className="ja-zawartosc">
+          <div className="karta-ja">
           <img className="rece-zdjecie" src={rece} alt="Ręce" />
 
           <div className="imie">
             <h1>Jeremi Pińkowski</h1>
           </div>
-        </div>
+          </div>
 
-        <p className="opis-ja">
+          <p className="opis-ja">
           Uczę się tworzyć strony internetowe, rozwijam się w programowaniu i z
           każdym kolejnym projektem zdobywam nowe doświadczenie. Lubię uczyć się
           nowych rzeczy, testować własne pomysły i krok po kroku stawać się coraz
           lepszy w tym, co robię. Tworzenie stron daje mi dużo satysfakcji, a
           jednocześnie pomaga mi zbliżać się do mojego największego celu, czyli
           robienia własnych gier w przyszłości.
-        </p>
+          </p>
+        </div>
       </div>
     </>
   );

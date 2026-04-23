@@ -53,14 +53,12 @@ body {
 }
 
 .h33 {
-  top: 1vh;
-
-  position: absolute;
+  margin: 0;
 
 }
 
 .p33 {
-  margin: 0 240px;
+  max-width: 820px;
 
 }
 
@@ -173,13 +171,14 @@ h1 {
 }
 
 .marzenia {
-  height: 80vh;
+  height: 100vh;
   background-color: #1d7ec4a8;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  gap: 24px;
   background-image:
     url("/gaming-computer-transparent.svg"),
     url("/console-transparent.svg");
@@ -187,149 +186,154 @@ h1 {
   background-position: left 1.5vw center, right 1.5vw center;
   background-size: 22vw auto, 18vw auto;
   position: relative;
+
+  @media screen and (max-width: 768px) {
+    height: auto;
+    gap: 24px;
+  }
 }
 
-  .logo-glowne {
-    display: block;
-    width: 52vw;
-    max-width: 100%;
-    height: auto;
-    margin-left: auto;
+.logo-glowne {
+  display: block;
+  width: 52vw;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+}
+
+.napis-re-render {
+  display: block;
+  width: 88vw;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+  align-self: flex-start;
+}
+
+.opis-strony {
+  margin: 0;
+}
+
+.sekcja-powitalna::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./assets/kodbgbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-size: 100%;
+  opacity: 0.38;
+  z-index: -1;
+}
+
+.sekcja-powitalna>* {
+  position: relative;
+  z-index: 1;
+}
+
+
+.p22 {
+  position: absolute;
+  left: 5vw;
+  bottom: 17.8vh;
+  text-align: left;
+}
+
+.zawartosc-strony {
+  flex: 1;
+  padding: auto;
+}
+
+.sekcja-projekty {
+  padding: 48px 32px 64px;
+}
+
+.lista-projektow {
+  list-style: none;
+  display: grid;
+  gap: 24px;
+  padding: 0;
+  margin: 32px 0 0;
+}
+
+.karta-projektu {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  border: 1px solid var(--obramowanie);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(14, 23, 37, 0.96), rgba(10, 15, 28, 0.92));
+  box-shadow: var(--cien);
+  text-align: left;
+}
+
+.tytul-projektu {
+  margin: 0;
+  color: var(--tekst-mocny);
+  font-size: 1.5rem;
+}
+
+.opis-projektu {
+  margin: 0;
+  color: var(--tekst);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.link-projektu {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-projektu:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.obraz-projektu {
+  width: 100%;
+  max-width: 72vw;
+  border-radius: 18px;
+  border: 1px solid rgba(103, 232, 249, 0.18);
+}
+
+.meta-projektu {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
   }
 
-  .napis-re-render {
-    display: block;
-    width: 88vw;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    object-position: left center;
-    align-self: flex-start;
-  }
-
-  .opis-strony {
-    margin: 0;
-  }
-
-  .sekcja-powitalna::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("./assets/kodbgbg.png") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-size: 100%;
-    opacity: 0.38;
-    z-index: -1;
-  }
-
-  .sekcja-powitalna>* {
-    position: relative;
-    z-index: 1;
-  }
-
-
-  .p22 {
-    position: absolute;
-    left: 5vw;
-    bottom: 17.8vh;
-    text-align: left;
+  h1 {
+    font-size: 36px;
+    margin: 0px 0;
   }
 
   .zawartosc-strony {
-    flex: 1;
-    padding: auto;
+    padding: 24px 20px;
   }
 
   .sekcja-projekty {
-    padding: 48px 32px 64px;
+    padding: 32px 16px 48px;
   }
 
-  .lista-projektow {
-    list-style: none;
-    display: grid;
-    gap: 24px;
-    padding: 0;
-    margin: 32px 0 0;
+  .wiersz-powitalny {
+    flex-wrap: wrap;
+    gap: 16px;
   }
 
-  .karta-projektu {
-    display: grid;
-    gap: 14px;
-    padding: 24px;
-    border: 1px solid var(--obramowanie);
-    border-radius: 24px;
-    background: linear-gradient(180deg, rgba(14, 23, 37, 0.96), rgba(10, 15, 28, 0.92));
-    box-shadow: var(--cien);
-    text-align: left;
+  .logo-glowne {
+    width: 78vw;
+    max-width: 100%;
   }
-
-  .tytul-projektu {
-    margin: 0;
-    color: var(--tekst-mocny);
-    font-size: 1.5rem;
-  }
-
-  .opis-projektu {
-    margin: 0;
-    color: var(--tekst);
-    font-size: 0.98rem;
-    line-height: 1.6;
-  }
-
-  .link-projektu {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .link-projektu:hover {
-    color: #ffffff;
-    text-decoration: underline;
-  }
-
-  .obraz-projektu {
-    width: 100%;
-    max-width: 72vw;
-    border-radius: 18px;
-    border: 1px solid rgba(103, 232, 249, 0.18);
-  }
-
-  .meta-projektu {
-    margin: 0;
-    color: #ffffff;
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  @media (max-width: 1024px) {
-    :root {
-      font-size: 16px;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin: 0px 0;
-    }
-
-    .zawartosc-strony {
-      padding: 24px 20px;
-    }
-
-    .sekcja-projekty {
-      padding: 32px 16px 48px;
-    }
-
-    .wiersz-powitalny {
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .logo-glowne {
-      width: 78vw;
-      max-width: 100%;
-    }
 
   .obraz-projektu {
     max-width: 100%;
@@ -341,16 +345,16 @@ h1 {
   }
 }
 
-  .tresc-powitalna {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: fit-content;
-    max-width: 100%;
-    padding: 8px;
-    text-align: left;
-  }
+.tresc-powitalna {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  padding: 8px;
+  text-align: left;
+}
 
-  .tresc-powitalna>* {
-    margin-left: 0;
-  }
+.tresc-powitalna>* {
+  margin-left: 0;
+}

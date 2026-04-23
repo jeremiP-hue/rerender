@@ -4,9 +4,13 @@
   align-items: center;
   gap: 16px;
   padding: 20px 32px;
+  height: auto;
+  width: 80vw;
   position: sticky;
   top: 0;
-  z-index: 100000000;;
+  z-index: 100000000;
+  box-sizing: border-box;
+
 }
 
 .linki-nawigacji {
@@ -63,6 +67,7 @@
 @media (max-width: 720px) {
   .pasek-nawigacji {
     padding: 16px 20px;
+    width: 100vw;
   }
 
   .logo-nawigacji {
@@ -74,5 +79,13 @@
   .logo-nawigacji img {
     width: clamp(5.75rem, 24vw, 7rem);
     height: 122px;
+
+  }
+}
+@media (max-width: 420px) {
+ 
+  .logo-nawigacji{
+    display: none;
+    
   }
 }
