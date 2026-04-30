@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 const apiBaseUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
-import ProjektEditor from "./Projekteditor";
+import ProjektEditor from "./Projekteditor.jsx";
 
 const emptyProject = {
   "name": "",
