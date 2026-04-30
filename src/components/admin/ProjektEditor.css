@@ -6,11 +6,17 @@
     left: 0;
     top: 0;
     z-index: 999999999999999999;
+    justify-content: center;
     display: flex;
     align-items: center;
 }
 .popup{
 background: #bfc1bf;
+
+display: flex;
+width: 60%;
+height: 60%;
+flex-direction: column;
 }
 input::placeholder {
   color: gray;
