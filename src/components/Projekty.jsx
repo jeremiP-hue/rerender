@@ -2,17 +2,6 @@ import { useEffect, useState } from "react";
 
 const apiBaseUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
-const normalizujUrlProjektu = (url) => {
-  if (!url) {
-    return "";
-  }
-
-  if (/^https?:\/\//i.test(url)) {
-    return url;
-  }
-
-  return `https://${url}`;
-};
 
 const Projekty = () => {
   const [projekty, setProjekty] = useState([]);
@@ -47,13 +36,12 @@ const Projekty = () => {
       {bladLadowania ? <p className="meta-projektu">{bladLadowania}</p> : null}
       <ul className="lista-projektow">
         {projekty.map((e) => {
-          const urlProjektu = normalizujUrlProjektu(e.url);
 
           return (
             <li key={`${e.name}-${e.date}`} className="karta-projektu">
               <h4 className="tytul-projektu">{e.name}</h4>
               <p className="opis-projektu">{e.description}</p>
-              <a className="link-projektu" href={urlProjektu} target="_blank" rel="noreferrer">
+              <a className="link-projektu" href={e.url} target="_blank" rel="noreferrer">
                 To jest link, ale nie wszystkie działają
               </a>
               <img

@@ -35,21 +35,6 @@ body {
   color: #ffffff;
 
   overflow: scroll;
-
-  @media screen and (min-width: 768px) {
-    background-color: var(--tlo-bokow);
-    background-image:
-      radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 22%),
-      radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.18), transparent 26%),
-      url("./assets/tlo-kod.svg");
-    background-position: left top, right bottom, center center;
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-size: auto, auto, cover;
-    background-attachment: fixed, fixed, fixed;
-
-  }
-
-
 }
 
 .h33 {
@@ -70,20 +55,6 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   background: var(--bg);
-
-  @media screen and (min-width: 768px) {
-    width: 80vw;
-    margin: 0 auto;
-
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 100%;
-
-  }
-
-
-
 }
 
 h1 {
@@ -186,11 +157,6 @@ h1 {
   background-position: left 1.5vw center, right 1.5vw center;
   background-size: 22vw auto, 18vw auto;
   position: relative;
-
-  @media screen and (max-width: 768px) {
-    height: auto;
-    gap: 24px;
-  }
 }
 
 .logo-glowne {
@@ -307,6 +273,50 @@ h1 {
   line-height: 1.5;
 }
 
+.tresc-powitalna {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  padding: 8px;
+  text-align: left;
+}
+
+.tresc-powitalna>* {
+  margin-left: 0;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-color: var(--tlo-bokow);
+    background-image:
+      radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 22%),
+      radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.18), transparent 26%),
+      url("./assets/tlo-kod.svg");
+    background-position: left top, right bottom, center center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: auto, auto, cover;
+    background-attachment: fixed, fixed, fixed;
+  }
+
+  #root {
+    width: 80vw;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #root {
+    width: 100%;
+  }
+
+  .marzenia {
+    height: auto;
+    gap: 24px;
+  }
+}
+
 @media (max-width: 1024px) {
   :root {
     font-size: 16px;
@@ -343,18 +353,4 @@ h1 {
     background-position: left 1vw bottom, right 1vw bottom;
     background-size: 26vw auto, 22vw auto;
   }
-}
-
-.tresc-powitalna {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: fit-content;
-  max-width: 100%;
-  padding: 8px;
-  text-align: left;
-}
-
-.tresc-powitalna>* {
-  margin-left: 0;
 }

@@ -3,7 +3,7 @@ import "./Cennik.css";
 const Cennik = () => {
     return (
         <div className="tlo-cennika">
-            <h1>Cennik test</h1>
+            <h1>Cennik</h1>
             <h2>Cennik startowy</h2>
             <p className="opis-cennika">
                 Ceny są orientacyjne i zależą od trudności projektu. Każdą stronę

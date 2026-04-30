@@ -7,6 +7,7 @@ import Kontakt from "./components/Kontakt";
 import Projekty from "./components/Projekty";
 import UkladStrony from "./components/UkladStrony";
 import Cennik from "./components/Cennik";
+import Admin from "./components/admin/Admin";
 
 
 const routerAplikacji = createBrowserRouter([
@@ -28,10 +29,11 @@ const routerAplikacji = createBrowserRouter([
       },
       {
         path: "cennik",
-        element: < Cennik/>
+        element: <Cennik/>
       },
       {
-        path: ""
+        path: "xix",
+        element: <Admin/>
       }
     ],
   },
