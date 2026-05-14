@@ -1,5 +1,5 @@
 import "./ProjektEditor.css"
-const ProjektEditor = ({ openProjket, onClose, update, save }) => { 
+const ProjektEditor = ({ openProjket, onClose, update, save, errorr }) => { 
 
     return (
         <section className="wrapper">
@@ -12,6 +12,8 @@ const ProjektEditor = ({ openProjket, onClose, update, save }) => {
                 <input value={openProjket.img} onChange={(e) => update('img', e.target.value)} placeholder="dodaj url obrazu" />
                 <textarea value={openProjket.description} onChange={(e) => update('description', e.target.value)} placeholder="wpisz opis"></textarea>
                 <button onClick={save}>save </button>
+                <h2>{errorr}
+                </h2>
             </div>
         </section>
     )

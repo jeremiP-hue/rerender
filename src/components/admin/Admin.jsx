@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
-const apiBaseUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
+﻿import { useEffect, useState } from "react";
+const apiBaseUrl = import.meta.env.VITE_API_URL || "https://backrerender.vercel.app";
 import ProjektEditor from "./ProjektEditor.jsx";
-
+import "./admin.css"
+import { use } from "react";
+import Potwierdz from "./Potwierdz.jsx";
+import Zaloguj from "./Zaloguj.jsx";
 const emptyProject = {
   "name": "",
   "description": "",
@@ -14,7 +17,21 @@ const emptyProject = {
 const Admin = () => {
   const [projekty, setProjekty] = useState([])
   const [openProjket, setOpenProjket] = useState()
+  const [errorr, seterrorr] = useState("")
+  const [idDoUsuniencia, setIdDoUsuniencia] = useState()
+  const [CzyNieToty, SetCzyNieToty] = useState(!sessionStorage.getItem('czyZalogowano'))//pobierane z sessionstorage
+  //funkcja zapisujaca
 
+
+  const zaloguj = () => {
+    SetCzyNieToty(false)
+    sessionStorage.setItem("czyZalogowano", true)
+  }
+
+  const wyloguj = () => {
+    SetCzyNieToty(true)
+    sessionStorage.setItem("czyZalogowano", false)
+  }
 
   const pobierz = async () => {
     try {
@@ -22,7 +39,7 @@ const Admin = () => {
       const res = await fetch(projektyUrl);
 
       if (!res.ok) {
-        throw new Error("Nie udało się pobrać projektów.");
+        throw new Error("Nie udaĹ‚o siÄ™ pobraÄ‡ projektĂłw.");
       }
 
       const projektys = await res.json();
@@ -44,76 +61,113 @@ const Admin = () => {
 
 
   const save = async () => {
-    try {
-      const projektyUrl = `${apiBaseUrl}/project`;
-      const res = await fetch(projektyUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(openProjket),
-      });
+    if (!/^\d+$/.test(openProjket.date)) {
+      seterrorr("wpisz liczbę ")
+      return
+    }
+    if (openProjket.id == null) {
+      try {
+        const projektyUrl = `${apiBaseUrl}/project`;
+        const res = await fetch(projektyUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(openProjket)
+        });
 
-      if (!res.ok) {
-        throw new Error("Nie udało się pobrać projektów.");
+        if (!res.ok) {
+          throw new Error("Nie udaĹ‚o siÄ™ pobraÄ‡ projektĂłw.");
+        }
+
+        pobierz()
       }
+      catch (error) {
+        console.error(error);
+      }
+      close()
+    }
+    else {
+      try {
+        const projektyUrl = `${apiBaseUrl}/project/${openProjket.id}`;
+        const res = await fetch(projektyUrl, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(projectToSave)
+        });
 
-      pobierz()
+        if (!res.ok) {
+          throw new Error("Nie udaĹ‚o siÄ™ pobraÄ‡ projektĂłw.");
+        }
+
+        pobierz()
+      }
+      catch (error) {
+        console.error(error);
+      }
+      close()
     }
-    catch (error) {
-      console.error(error);
-    }
-    close()
   }
 
 
   const deletee = async (id) => {
     try {
+
       const projektyUrl = `${apiBaseUrl}/project/${id}`;
+
       const res = await fetch(projektyUrl, {
         method: "DELETE",
       });
 
+
+
       if (!res.ok) {
-        throw new Error("Nie udało się pobrać projektów.");
+        throw new Error("Nie udaĹ‚o siÄ™ pobraÄ‡ projektĂłw.");
       }
 
+
       pobierz()
+
     }
+
+
     catch (error) {
       console.error(error);
     }
   }
 
-
-
-
-
   return (
+    CzyNieToty ? <Zaloguj zaloguj={zaloguj}/> :
     <section className="sekcja-projekty">
-      <button onClick={() => setOpenProjket(emptyProject)}>otworz projekt</button>
+      <button onClick={() => setOpenProjket(emptyProject)} className="nowyprojekt">otworz projekt</button>
+      <button onClick={wyloguj}>wyloguj</button>
 
 
-      {openProjket && <ProjektEditor openProjket={openProjket} update={update} save={save} onClose={close} />}
+      {openProjket && <ProjektEditor openProjket={openProjket} update={update} save={save} onClose={close} errorr={errorr} />}
+      {idDoUsuniencia && <Potwierdz idDoUsuniencia={idDoUsuniencia} deletee={deletee} setIdDoUsuniencia={setIdDoUsuniencia} />}
+
+
       <ul className="lista-projektow">
         {projekty.map((e) => {
 
           return (
             <li key={`${e.name}-${e.id}`} className="karta-projektu">
               <button onClick={() => setOpenProjket(e)}>otworz projekt</button>
-              <button onClick={() => deletee(e.id)}>usuń</button>
+              <button onClick={() => setIdDoUsuniencia(e.id)} className="usun">usuĹ„</button>
               <h4 className="tytul-projektu">{e.name}</h4>
               <p className="opis-projektu">{e.description}</p>
               <a className="link-projektu" href={e.url} target="_blank" rel="noreferrer">
-                To jest link, ale nie wszystkie działają
+                To jest link, ale nie wszystkie dziaĹ‚ajÄ…
               </a>
               <img
                 className="obraz-projektu"
                 src={e.img}
-                alt={`Podgląd projektu ${e.name}`}
+                alt={`PodglÄ…d projektu ${e.name}`}
               />
               <p className="meta-projektu">
-                Ten projekt został zrobiony w {e.date} i jest w statusie {e.state}
+                Ten projekt zostaĹ‚ zrobiony w {e.date} i jest w statusie {e.state}
               </p>
             </li>
           );
