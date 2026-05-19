@@ -2,7 +2,6 @@
 const apiBaseUrl = import.meta.env.VITE_API_URL || "https://backrerender.vercel.app";
 import ProjektEditor from "./ProjektEditor.jsx";
 import "./admin.css"
-import { use } from "react";
 import Potwierdz from "./Potwierdz.jsx";
 import Zaloguj from "./Zaloguj.jsx";
 const emptyProject = {
@@ -95,7 +94,7 @@ const Admin = () => {
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(projectToSave)
+          body: JSON.stringify(openProjket)
         });
 
         if (!res.ok) {
@@ -124,7 +123,7 @@ const Admin = () => {
 
 
       if (!res.ok) {
-        throw new Error("Nie udaĹ‚o siÄ™ pobraÄ‡ projektĂłw.");
+        throw new Error("Nie udało‚o się™ pobraać projektółw.");
       }
 
 
@@ -155,16 +154,16 @@ const Admin = () => {
           return (
             <li key={`${e.name}-${e.id}`} className="karta-projektu">
               <button onClick={() => setOpenProjket(e)}>otworz projekt</button>
-              <button onClick={() => setIdDoUsuniencia(e.id)} className="usun">usuĹ„</button>
+              <button onClick={() => setIdDoUsuniencia(e.id)} className="usun">usuń</button>
               <h4 className="tytul-projektu">{e.name}</h4>
               <p className="opis-projektu">{e.description}</p>
               <a className="link-projektu" href={e.url} target="_blank" rel="noreferrer">
-                To jest link, ale nie wszystkie dziaĹ‚ajÄ…
+                To jest link, ale nie wszystkie działają
               </a>
               <img
                 className="obraz-projektu"
                 src={e.img}
-                alt={`PodglÄ…d projektu ${e.name}`}
+                alt={`Podgląd projektu ${e.name}`}
               />
               <p className="meta-projektu">
                 Ten projekt zostaĹ‚ zrobiony w {e.date} i jest w statusie {e.state}
