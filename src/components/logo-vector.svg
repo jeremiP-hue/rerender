@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Re-render logo</title>
+  <desc id="desc">Vector version of the blue crescent logo with three light panels.</desc>
+  <defs>
+    <radialGradient id="background" cx="53%" cy="46%" r="62%">
+      <stop offset="0" stop-color="#9fb2b6"/>
+      <stop offset=".25" stop-color="#526269"/>
+      <stop offset=".62" stop-color="#303434"/>
+      <stop offset="1" stop-color="#272827"/>
+    </radialGradient>
+
+    <radialGradient id="blueGlow" cx="48%" cy="51%" r="45%">
+      <stop offset="0" stop-color="#61dcff" stop-opacity=".9"/>
+      <stop offset=".35" stop-color="#0aa8f5" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#0046d7" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="outerBlue" x1="350" y1="330" x2="635" y2="742" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2fe7ff"/>
+      <stop offset=".26" stop-color="#008fed"/>
+      <stop offset=".58" stop-color="#0240c7"/>
+      <stop offset="1" stop-color="#07148a"/>
+    </linearGradient>
+
+    <linearGradient id="outerHighlight" x1="348" y1="346" x2="500" y2="729" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bdf7ff"/>
+      <stop offset=".38" stop-color="#27d9ff"/>
+      <stop offset="1" stop-color="#0065df"/>
+    </linearGradient>
+
+    <linearGradient id="innerBlue" x1="455" y1="356" x2="664" y2="610" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#007ce7"/>
+      <stop offset=".48" stop-color="#062fa5"/>
+      <stop offset="1" stop-color="#07116d"/>
+    </linearGradient>
+
+    <linearGradient id="swooshBlue" x1="405" y1="520" x2="650" y2="455" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a37b6"/>
+      <stop offset=".36" stop-color="#03a6ff"/>
+      <stop offset=".76" stop-color="#30d8ff"/>
+      <stop offset="1" stop-color="#ddfcff"/>
+    </linearGradient>
+
+    <linearGradient id="panelFill" x1="559" y1="314" x2="686" y2="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".42" stop-color="#edf4f8"/>
+      <stop offset="1" stop-color="#aeb9c4"/>
+    </linearGradient>
+
+    <linearGradient id="panelEdge" x1="572" y1="318" x2="680" y2="431" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#607082"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+
+    <filter id="dropShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="10" dy="16" stdDeviation="10" flood-color="#02081d" flood-opacity=".6"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#background)"/>
+  <circle cx="522" cy="511" r="256" fill="url(#blueGlow)" filter="url(#softGlow)"/>
+  <ellipse cx="585" cy="398" rx="142" ry="90" fill="#f7ffff" opacity=".55" filter="url(#softGlow)"/>
+
+  <g filter="url(#dropShadow)">
+    <path
+      d="M672 514c-59 95-166 148-264 122-91-24-158-111-147-205 12-106 112-187 250-181l-13 68c-88 4-152 54-166 120-16 78 41 151 112 166 69 15 143-18 196-89l-110 29c-27 41-76 61-123 46-53-17-84-71-73-124 12-56 67-96 136-100l-12 63c-41 6-69 28-76 59-7 33 13 67 47 79 39 14 83-5 105-48z"
+      fill="url(#outerBlue)"/>
+
+    <path
+      d="M324 482c3-93 86-171 188-172l-11 51c-83 4-148 57-162 126-11 55 12 108 54 141-47-25-71-78-69-146z"
+      fill="url(#outerHighlight)" opacity=".95"/>
+
+    <path
+      d="M372 481c25-61 82-101 150-108l-10 56c-62 7-108 35-140 52z"
+      fill="url(#innerBlue)"/>
+
+    <path
+      d="M430 606c-47-12-77-55-68-97 10-45 66-77 149-93 62-12 112-5 122 26 3 9 4 18 3 26-60 6-121 19-177 39-51 18-75 44-76 72 10 13 25 23 47 27z"
+      fill="#061565" opacity=".85"/>
+
+    <path
+      d="M381 557c34-54 126-92 254-99 1-26-27-42-79-43-82 1-163 28-207 69-16 15-25 31-26 46 8 13 30 22 58 27z"
+      fill="url(#swooshBlue)"/>
+
+    <path
+      d="M331 430c26-77 97-132 181-135l-3 15c-96 2-174 73-184 162-10 83 47 159 128 181 68 18 143-8 197-66-60 79-154 115-240 89-105-32-154-140-127-229 4-14 10-27 18-40 5-9 11-18 18-27-18 29-26 56-28 74-8 98 67 182 159 200 66 13 137-13 191-76-54 58-127 84-195 67-86-21-142-105-115-215z"
+      fill="#35dfff" opacity=".55"/>
+
+    <path d="M521 323l13-70 48 15-34 54-30 49-37-11z" fill="#061264" opacity=".75"/>
+    <path d="M552 254l48 16-32 54-34-12z" fill="url(#panelFill)" stroke="url(#panelEdge)" stroke-width="3"/>
+
+    <path d="M620 286l40 35-48 45-31-29z" fill="#061264" opacity=".65"/>
+    <path d="M622 278l43 38-45 43-34-31z" fill="url(#panelFill)" stroke="url(#panelEdge)" stroke-width="3"/>
+
+    <path d="M674 340l35 45-63 28-24-37z" fill="#061264" opacity=".6"/>
+    <path d="M674 331l38 49-62 27-24-39z" fill="url(#panelFill)" stroke="url(#panelEdge)" stroke-width="3"/>
+
+    <path d="M326 489c31-69 140-117 302-119 14 8 23 22 28 40-164-1-279 38-330 79z" fill="#d9ffff" opacity=".45"/>
+    <path d="M326 506c41-45 162-80 312-78 3 8 3 17 1 29-131 6-226 37-268 80-23-6-40-16-45-31z" fill="#24cfff" opacity=".5"/>
+
+    <path d="M506 251c-121 5-215 77-236 175-23 106 54 211 161 232 75 15 155-14 213-80" fill="none" stroke="#7ff6ff" stroke-width="3" opacity=".75"/>
+    <path d="M640 515c-57 73-141 106-218 86" fill="none" stroke="#09105c" stroke-width="4" opacity=".7"/>
+  </g>
+</svg>

@@ -76,7 +76,7 @@ const Admin = () => {
         });
 
         if (!res.ok) {
-          throw new Error("Nie udaĹ‚o siÄ™ pobraÄ‡ projektĂłw.");
+          throw new Error("Nie udało‚o się pobrać projektĂłw.");
         }
 
         pobierz()
@@ -166,7 +166,7 @@ const Admin = () => {
                 alt={`Podgląd projektu ${e.name}`}
               />
               <p className="meta-projektu">
-                Ten projekt zostaĹ‚ zrobiony w {e.date} i jest w statusie {e.state}
+                Ten projekt został‚ zrobiony w {e.date} i jest w statusie {e.state}
               </p>
             </li>
           );

@@ -19,9 +19,9 @@
   <circle cx="180" cy="160" r="130" fill="#22D3EE" fill-opacity="0.14" filter="url(#poziom)" />
   <circle cx="1420" cy="980" r="170" fill="#3B82F6" fill-opacity="0.14" filter="url(#poziom)" />
   <circle cx="150" cy="980" r="110" fill="#38BDF8" fill-opacity="0.1" filter="url(#poziom)" />
-  <circle cx="1450" cy="180" r="120" fill="#67E8F9" fill-opacity="0.1" filter="url(#poziom)" />
+  <circle cx="1450" cy="180" r="120" fill="#67e8f9" fill-opacity="0.1" filter="url(#poziom)" />
 
-  <g stroke="#67E8F9" stroke-opacity="0.18">
+  <g stroke="#67e8f9" stroke-opacity="0.18">
     <rect x="62" y="108" width="372" height="238" rx="20" />
     <rect x="88" y="398" width="330" height="170" rx="20" />
     <rect x="110" y="642" width="350" height="212" rx="20" />

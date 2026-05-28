@@ -18,12 +18,13 @@ textarea,
 select {
   font-family: "Inter", sans-serif;
 }
-
 :root {
+  --niebieski-jasny:#67e8f9;
+  --niebiski-cinmny:rgb(85, 163, 163);
   --tekst: #ffffff;
   --tekst-mocny: #ffffff;
   --bg: #16171d;
-  --tlo-bokow: #050816;
+  --tlo-bokow: #050816;     
   --obramowanie: #2e303a;
   --tlo-linku: rgba(47, 48, 58, 0.5);
   --cien:
@@ -57,7 +58,7 @@ body {
   background: var(--bg);
 }
 
-h1 {
+h2 {
   color: var(--tekst-mocny);
 
   letter-spacing: -1.68px;

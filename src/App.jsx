@@ -79,7 +79,7 @@ const StronaGlowna = () => {
         </p>      </div>
 
       <div className="ja">
-        <h1 className="czesc">Cześć, tu Jeremi</h1>
+        <h2 className="czesc">Cześć, tu Jeremi</h2>
         <h2
           className="czesc"
         >
@@ -88,20 +88,20 @@ const StronaGlowna = () => {
 
         <div className="ja-zawartosc">
           <div className="karta-ja">
-          <img className="rece-zdjecie" src={rece} alt="Ręce" />
+            <img className="rece-zdjecie" src={rece} alt="Ręce" />
 
-          <div className="imie">
-            <h1>Jeremi Pińkowski</h1>
-          </div>
+            <div className="imie">
+              <h2>Jeremi Pińkowski</h2>
+            </div>
           </div>
 
           <p className="opis-ja">
-          Uczę się tworzyć strony internetowe, rozwijam się w programowaniu i z
-          każdym kolejnym projektem zdobywam nowe doświadczenie. Lubię uczyć się
-          nowych rzeczy, testować własne pomysły i krok po kroku stawać się coraz
-          lepszy w tym, co robię. Tworzenie stron daje mi dużo satysfakcji, a
-          jednocześnie pomaga mi zbliżać się do mojego największego celu, czyli
-          robienia własnych gier w przyszłości.
+            Uczę się tworzyć strony internetowe, rozwijam się w programowaniu i z
+            każdym kolejnym projektem zdobywam nowe doświadczenie. Lubię uczyć się
+            nowych rzeczy, testować własne pomysły i krok po kroku stawać się coraz
+            lepszy w tym, co robię. Tworzenie stron daje mi dużo satysfakcji, a
+            jednocześnie pomaga mi zbliżać się do mojego największego celu, czyli
+            robienia własnych gier w przyszłości.
           </p>
         </div>
       </div>
