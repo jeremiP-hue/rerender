@@ -13,6 +13,14 @@ const Kontakt = () => {
     })
     const [blad, setBlad] = useState("")
     const [bladitem, setBladItem] = useState("")
+    const [isSuccess, setIsSuccess] = useState(false)
+    const [czyZalogowano, setCzyZalogowano] = useState(false)
+
+    useEffect(() => {
+        const zalogowano = sessionStorage.getItem('czyZalogowano') === 'true'
+        setCzyZalogowano(zalogowano)
+    }, [])
+
     const createClassNames = (czyTextarea, wratosc) => {
         let classNames = czyTextarea ? "kontakt-textarea" : "kontakt-input"
         if (bladitem == wratosc) {
@@ -20,7 +28,17 @@ const Kontakt = () => {
         }
         return classNames;
     }
+
+
+
+
+
+
+
+
+
     const creATEparams = (placeholder, wratosc, czyTextarea) => ({
+
 
         className: createClassNames(czyTextarea, wratosc),
         placeholder,
@@ -28,21 +46,36 @@ const Kontakt = () => {
         onChange: (e) => setDane(d => ({ ...d, [wratosc]: e.target.value }))
 
     })
+
     const przesli = () => {
-        console.log("ok")
+
+        setBlad("")
+        setBladItem("")
 
         let isError = false
-        if (dane.imie.length < 5 && dane.imie.includes(" ")) {
+        console.log(dane.imie.includes(" "))
+        if (dane.widomosc.length < 10) {
             isError = true;
-            setBlad("podaj imie i nazwisko")
-            setBladItem("imie")
+            setBlad("wiadomość musi mieć conajmniej 10 znaków")
+            setBladItem("widomosc")
+        }
+        if (dane.telefon.length < 9 || !/^\d+$/.test(dane.telefon)) {
+            isError = true;
+            setBlad("podaj poprawny numer telefonu")
+            setBladItem("telefon")
         }
         if (!dane.e_mail.includes("@")) {
             isError = true;
             setBlad("podaj poprawny email")
             setBladItem("e_mail")
         }
-        if (isError = false) {
+        if (dane.imie.length < 5 || !dane.imie.trim().includes(" ")) {
+            isError = true;
+            setBlad("podaj imie i nazwisko")
+            setBladItem("imie")
+        }
+        if (isError == false) {
+            setIsSuccess(true);
             axios
                 .post(`${apiBaseUrl}/contact`, dane)
                 .then((response) => {
@@ -58,7 +91,8 @@ const Kontakt = () => {
                     })
                 })
                 .finally(() => {
-                    console.log("ufghijsdfghiusdhjkfshjikfbhjk")
+
+                    console.log(isSuccess)
                 });
         }
     }
@@ -66,17 +100,25 @@ const Kontakt = () => {
 
     return (
         <div className="kontakt">
-            <h1 className="kontakt-naglowek">Witaj jeżeli jesteś zainteresowany moimi usługami</h1>
-            <img className="kontakt-obrazek"></img>
-            <input {...creATEparams("Imie i Nazwisko", "imie")}></input>
-            <input {...creATEparams("e-mail", "e_mail")}></input>
-            <input {...creATEparams("telefon ", "telefon")}></input>
+
+            {isSuccess && <p className="kontakt-sukces">Dziękujemy za kontakt, odezwiemy się jak najszybciej</p>}
+            {!isSuccess && (
+                <>
+                    <h1 className="kontakt-naglowek">{czyZalogowano ? "Jeżeli jesteś zainteresowany moimi usługami" : "CZłowieku wiem gdzie mieszkasz i jak sie nazywasz"} </h1>
+
+                    <img className="kontakt-obrazek"></img>
+                    <input {...creATEparams("Imie i Nazwisko", "imie")}></input>
+                    <input {...creATEparams("e-mail", "e_mail")}></input>
+                    <input {...creATEparams("telefon ", "telefon")}></input>
 
 
-            <textarea {...creATEparams("wiadomość", "widomosc", true)}></textarea>
-            <button className="kontakt-input kontakt-button" onClick={przesli}>zapisz</button>
-            {blad && <p className="kontakt-blad">{blad}</p>}
+                    <textarea {...creATEparams("wiadomość", "widomosc", true)}></textarea>
+                    <button className="kontakt-input kontakt-button" onClick={przesli}>zapisz</button>
+                    {blad && <p className="kontakt-blad">{blad}</p>}
+                </>
+            )}
         </div >
+
     )
 }
 export default Kontakt

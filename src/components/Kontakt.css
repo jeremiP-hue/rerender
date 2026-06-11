@@ -1,3 +1,4 @@
+
 .kontakt-naglowek {
     color: #67e8f9;
     text-shadow: 0 0 18px rgba(103, 232, 249, 0.35);
@@ -8,10 +9,7 @@
     border: 2px solid #67e8f9;
     border-radius: 16px;
 }
-.kontakt-blad {
-    color: #ff0000;
-    border: 2px solid rgb(255, 166, 0);
-}
+
 
 .kontakt-input {
     width: 15vw;
@@ -53,4 +51,8 @@
     flex-direction: column;
     gap: 10px;
     background-color: #0f172a;
+}
+.kontakt-blad {
+    color: #ff0000;
+    border: 2px solid rgb(255, 166, 0);
 }
