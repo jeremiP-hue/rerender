@@ -4,7 +4,7 @@ import { useState } from "react"
 const Zaloguj = ({ zaloguj }) => {
     const [password, setPassword] = useState()
     const sprawdz = () => {
-        if (password == "tak") {
+        if (password == "OK") {
             zaloguj()
             
         }
