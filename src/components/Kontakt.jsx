@@ -21,17 +21,28 @@ const Kontakt = () => {
 
     })
     const przesli = () => {
-    axios
+
+
+        let isError = false
+        if(imie =){ isError = true}
+    if(isError = false)
+    {axios
   .post(`${apiBaseUrl}/contact`, dane)
   .then((response) => {
     console.log(response.data);
   })
   .catch((error) => {
     console.error(error);
+        setDane({
+                    imie: "",
+        telefon: "",
+        e_mail: "",
+        widomosc: ""
+        })
   })
   .finally(() => {
         console.log("ufghijsdfghiusdhjkfshjikfbhjk")
-  });
+  });}
 }
 
 
@@ -45,7 +56,7 @@ const Kontakt = () => {
 
 
             <textarea {...creATEparams("wiadomość", "widomosc", true )}></textarea>
-            <button className="kontakt-input kontakt-button">zapisz</button>
+            <button className="kontakt-input kontakt-button" onClick={przesli}>zapisz</button>
         </div >
     )
 }
